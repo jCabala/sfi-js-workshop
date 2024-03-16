@@ -4,7 +4,7 @@
 npm test
 ```
 
-# Prototypy
+## Prototypy
 
 Programowanie obiektowe w JS bazuje na prototypach. Chociaż większość
 ukrywa je w cukrze składniowym klas to prototypy ciąglę są pod maską.
@@ -19,7 +19,7 @@ Programistka jest pragmatyczna gdy zna co najmniej 3 języki (`isPragmatic`).
 Zaimplementuj programistkę z użyciem prototypów. Pamiętaj żeby usunąć `skip`
 w pierwszym teście.
 
-# Prototypy - model koncepcyjny
+## Prototypy - model koncepcyjny
 
 Wymagane elementy:
 * funkcje - reprezentowane jako koła
@@ -31,7 +31,7 @@ Wymagane elementy:
 Jak Object i Object.prototype wpasowują się w ten model?
 Jak Function i Function.prototype wpasowują się w ten model?
 
-# Klasy
+## Klasy
 
 Teraz przepisz prototypy na klasy.
 
@@ -41,7 +41,7 @@ prototypes_and_classes.test.js
 
 Transpilator: https://buble.surge.sh/
 
-# new
+## new
 
 Zaimplementuj własny operator `new`.
 
@@ -59,7 +59,7 @@ Zacznijmy od 1 testu, który ma `skip`.
 
 Jak zachowuje się operator `new` gdy zwracamy własny obiekt lub typ prosty? 
 
-# instanceof
+## instanceof
 
 Teraz zaimplementuj własny operator `instanceof`.
 
@@ -71,7 +71,7 @@ Podpowiedzi:
 * musimy przejść łańcuch prototypów w poszukiwaniu odpowiedniej funkcji konstruktora
 * przeszukiwanie łańcucha odbywa się przez `__proto__`
 
-# 4 wiązania this
+## 4 wiązania this
 
 Wróćmy do `prototypes_and_classes.test.js` i nauczmy programistkę 3 języków na raz:
 
@@ -85,7 +85,7 @@ Mamy 4 rodzaje wiązania `this` które zobaczymy w
 thisBindingCharacterization.test.js
 ```
 
-# bind
+## bind
 
 W poszukiwaniu przewidywalnego kodu część programistek tworzy funkcje z przewidywalnym `this`.
 Z pomocą przychodzi `Function.prototype.bind`.
@@ -95,7 +95,7 @@ Zaimplementu własną funkcję `bind`
 bind.test.js
 ```
 
-# thiless
+## thiless
 
 Jeżeli łapiesz się na tym, że musisz walczyć z językiem warto rozważyć podzbiór języka bez this, new, class itd.
 
@@ -109,7 +109,7 @@ Po skończonym ćwiczeniu wytłumaczymy pojęcia:
 * action at a distance
 * rule of least powerful abstraction
 
-# zużycie pamięci
+## Zużycie pamięci
 
 Na jaki kompromi idziemy używając podejścia thisless?
 
