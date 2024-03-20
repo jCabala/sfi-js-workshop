@@ -111,7 +111,7 @@ Po skończonym ćwiczeniu wytłumaczymy pojęcia:
 
 ## Zużycie pamięci
 
-Na jaki kompromi idziemy używając podejścia thisless?
+Na jaki kompromis idziemy używając podejścia thisless?
 
 Wklaj kod z poprzedniego ćwiczenia do:
 ```
