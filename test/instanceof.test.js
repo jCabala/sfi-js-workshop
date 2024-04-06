@@ -6,6 +6,13 @@ function Person(name) {
 }
 
 function INSTANCEOF(obj, constructor) {
+    if(obj.__proto__ === null) return false
+
+    if(obj.__proto__.constructor === constructor) {
+        return true
+    } 
+
+    return INSTANCEOF(obj.__proto__, constructor)
 }
 
 describe('INSTANCEOF', function () {
@@ -17,19 +24,19 @@ describe('INSTANCEOF', function () {
         assert.ok(!(p instanceof Array));
     });
 
-    it.skip('on self', function () {
+    it('on self', function () {
         const p = new Person('Mateusz');
 
         assert.ok(INSTANCEOF(p, Person));
     });
 
-    it.skip('on own parent', function () {
+    it('on own parent', function () {
         const p = new Person('Mateusz');
 
         assert.ok(INSTANCEOF(p, Object));
     });
 
-    it.skip('on another parent', function () {
+    it('on another parent', function () {
         const p = new Person('Mateusz');
 
         assert.ok(!INSTANCEOF(p, Array));

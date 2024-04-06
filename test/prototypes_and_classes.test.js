@@ -2,12 +2,12 @@ import { test } from "node:test";
 import assert from 'node:assert';
 
 function Programmer1() {
-    this.languages = [];
+    this.languages = []
 }
 
 Programmer1.prototype.learnNewLanguage = function(language) {
     this.languages.push(language)
-};
+}
 
 Programmer1.prototype.isPragmatic = function() {
    return this.languages.length >= 3
@@ -36,6 +36,8 @@ test('programmer with prototype', function () {
     assert.ok(!programmer.isPragmatic());
     programmer.learnNewLanguage('Python');
     assert.ok(programmer.isPragmatic());
+
+    // ['haskell', 'rest'].forEach(programmer.learnNewLanguage) // This will break
 });
 
 test('programmer with class', function () {

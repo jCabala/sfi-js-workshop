@@ -20,8 +20,14 @@ function NullPerson(name) {
 }
 
 function NEW(constructor, args) {
+    const obj = {}
+    obj.__proto__ = constructor.prototype
+    constructor.apply(obj, args)
+
+    return obj
 }
 
+// NULL is at the top of class hierarchy lol
 describe('NEW', function () {
     it('allows to create new objects', function () {
         const p1 = new Person('Mateusz');
@@ -33,7 +39,7 @@ describe('NEW', function () {
         assert.ok(p3 instanceof NullPerson);
     });
 
-    it.skip('allows to create new objects - own implementation - happy path', function () {
+    it('allows to create new objects - own implementation - happy path', function () {
         const p1 = NEW(Person, ['Mateusz']);
 
         assert.equal(p1.sayHi(), 'Hi, I am Mateusz');
