@@ -1,7 +1,11 @@
 import { describe, it } from "node:test";
 import assert from 'node:assert';
 
-function bind(originalFn, thisArg) {}
+function bind(originalFn, thisArg) {
+    return function(...args) {
+        return originalFn.apply(thisArg, args)
+    }
+}
 
 describe('Custom bind', function () {
     const person = {
@@ -14,7 +18,7 @@ describe('Custom bind', function () {
     const sayWithPersonBound = person.saySomething.bind(person);
     const customSayWithPersonBound = bind(person.saySomething, person);
 
-    it.skip('should mimic Object.bind()', function () {
+    it('should mimic Object.bind()', function () {
         assert.equal(sayWithPersonBound('!'), 'Mike!');
         assert.equal(customSayWithPersonBound('!'), 'Mike!');
 
