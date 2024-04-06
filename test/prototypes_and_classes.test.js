@@ -1,17 +1,34 @@
 import { test } from "node:test";
 import assert from 'node:assert';
 
-function Programmer1() {}
-Programmer1.prototype.learnNewLanguage = function(language) {};
-
-
-class Programmer2 {
-    constructor() {}
-
-    learnNewLanguage(language) {}
+function Programmer1() {
+    this.languages = [];
 }
 
-test.skip('programmer with prototype', function () {
+Programmer1.prototype.learnNewLanguage = function(language) {
+    this.languages.push(language)
+};
+
+Programmer1.prototype.isPragmatic = function() {
+   return this.languages.length >= 3
+}
+
+class Programmer2 {
+    constructor() {
+        this.languages = []
+    }
+
+    learnNewLanguage(language) {
+        this.languages.push(language)
+    }
+
+    isPragmatic() {
+        return this.languages.length >= 3
+    }
+}
+
+test('programmer with prototype', function () {
+    // __proto__ LOL
     const programmer = new Programmer1();
 
     programmer.learnNewLanguage('Java');
@@ -21,7 +38,8 @@ test.skip('programmer with prototype', function () {
     assert.ok(programmer.isPragmatic());
 });
 
-test.skip('programmer with class', function () {
+test('programmer with class', function () {
+    // __proto__ LOL
     const programmer = new Programmer2();
 
     programmer.learnNewLanguage('Java');
