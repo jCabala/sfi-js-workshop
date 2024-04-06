@@ -2,11 +2,22 @@ import { test } from "node:test";
 import assert from 'node:assert';
 
 function createProgrammer() {
+    const languages = []
+
+    return {
+        learnNewLanguage(language) {
+            languages.push(language)
+        },
+    
+        isPragmatic() {
+            return languages.length >= 3
+        }
+    }
 }
 
 // in this exercise you cannot use this
 // only functions and object literals are allowed
-test.skip('thisless programmer', function () {
+test('thisless programmer', function () {
     const programmer = createProgrammer();
 
     programmer.learnNewLanguage('Elm');
